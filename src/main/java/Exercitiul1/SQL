@@ -1,0 +1,16 @@
+
+-- Crearea tabelului persoane
+CREATE TABLE persoane (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nume VARCHAR(45) NOT NULL,
+    varsta INT NOT NULL
+);
+
+-- Crearea tabelului excursii
+CREATE TABLE excursii (
+    id_persoana INT,
+    id_excursie INT AUTO_INCREMENT PRIMARY KEY,
+    destinatia VARCHAR(100) NOT NULL,
+    anul INT NOT NULL,
+    FOREIGN KEY (id_persoana) REFERENCES persoane(id)
+);
